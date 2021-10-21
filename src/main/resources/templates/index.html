@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <link rel="stylesheet" type="text/css" href="product.css">
+</head>
+<div style="text-align: center;">
+    <body>
+    <hr>
+    <h1>Welcome to the Webapp</h1>
+    <p>Here you can log in or create an account</p>
+    <br>
+    <form method="post" th:action="@{/validateLogin}">
+       <label>Username: </label>
+        <br>
+        <input type th:name="username">
+        <br>
+        <label>Password: </label>
+        <br>
+        <input type th:name="password">
+        <br>
+        <br>
+        <input type="submit" value="Login"/>
+        <br>
+        <br>
+        <a hef="/register"> <input type="button"  value="Create account!"></a>
+    </form>
+    <br>
+    <hr>
+    </body>
+</div>
+</html>
