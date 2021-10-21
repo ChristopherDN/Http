@@ -49,14 +49,6 @@ public class HtmlController {
         return "friday";
     }
 
-   /* @PostMapping("/login")
-    public String submitForm(@ModelAttribute("user") User user){
-        if(user.getUsername().equals("Chris")&&user.getPassword().equals("1234")){
-            return "loginSuccess";
-        } else{
-            return "loginFailed";
-        }*/
-
 }
 
 
