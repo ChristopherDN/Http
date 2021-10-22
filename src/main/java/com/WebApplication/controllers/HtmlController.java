@@ -32,10 +32,6 @@ public class HtmlController {
         return "loginFailed";
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return "test";
-    }
 
     @GetMapping("/register")
     public String register() {
