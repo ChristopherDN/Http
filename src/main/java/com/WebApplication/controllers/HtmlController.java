@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.SessionScope;
+import org.springframework.web.context.request.WebRequest;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -18,6 +20,7 @@ public class HtmlController {
     ArrayList <User> users = sqLcontroller.getResults(sqLcontroller.scriptRecieve("select * from users.accounts"));
 
 
+
     @PostMapping("/validateLogin")
     public String validateLogin(@RequestParam(value = "username") String username,
                                 @RequestParam(value = "password") String password) {
@@ -29,6 +32,10 @@ public class HtmlController {
         return "loginFailed";
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
 
     @GetMapping("/register")
     public String register() {
