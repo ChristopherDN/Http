@@ -39,7 +39,11 @@
     <br>
     <br>
     <br>
-    <a href="/friday"> <input type="button" value="🥂 Is it friday 🥂"></a>
+    <a href="/friday"> <input type="button" value="🥂 This calls for a celebration 🥂"></a>
+    <br>
+    is this session empty?
+    <br>
+    <th:block th:text="${session.isEmpty()}? 'Yes':'No'"></th:block>
     </body>
 </div>
 </html>

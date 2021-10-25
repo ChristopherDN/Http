@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.SessionScope;
 import org.springframework.web.context.request.WebRequest;
 
+import javax.servlet.http.HttpSession;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
@@ -17,21 +18,12 @@ import java.util.Calendar;
 @Controller
 public class HtmlController {
     SQLcontroller sqLcontroller = new SQLcontroller();
-    ArrayList <User> users = sqLcontroller.getResults(sqLcontroller.scriptRecieve("select * from users.accounts"));
-
-
 
     @PostMapping("/validateLogin")
-    public String validateLogin(@RequestParam(value = "username") String username,
-                                @RequestParam(value = "password") String password) {
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getUsername().equals(username) && users.get(i).getPassword().equals(password)) {
-                return "loginSuccess";
-            }
-        }
-        return "loginFailed";
+    public String validateLogin(WebRequest request, HttpSession session) {
+        User user = new User(request.getParameter("username"),request.getParameter("password"));
+        return sqLcontroller.validateLogin(user,request,session);
     }
-
 
     @GetMapping("/register")
     public String register() {
@@ -39,21 +31,18 @@ public class HtmlController {
     }
 
     @PostMapping("/createAccount")
-    public String createAccount(@RequestParam(value = "username") String username,
-                                @RequestParam(value = "password") String password,
-                                @RequestParam(value = "email") String email){
-        users.add(new User(username,password,email));
+    public String createAccount(WebRequest request){
+        User user = new User(request.getParameter("username")
+                ,request.getParameter("password"),
+                request.getParameter("email"));
+        sqLcontroller.users.add(user);
         sqLcontroller.scriptCommand("insert into Users.accounts(username, password, email)values" +
-                "("+"\"" + username +"\",\"" + password + "\",\"" + email +"\")");
+                "("+"\"" + user.getUsername() +"\",\"" + user.getPassword() + "\",\"" + user.getEmail() +"\")");
         return "index";
     }
+
     @GetMapping("/friday")
     public String friday() {
         return "friday";
     }
-
 }
-
-
-
-
