@@ -1,18 +1,42 @@
+*{
+    padding:0;
+    margin:0;
+}
+.login{
+    border-radius: 5px ;
+}
+#col{
+    color: rgb(241, 213, 72);
+}
 html{
     font-family: "cursive";
 }
-
+body{
+    background-image:url(/art-deco-style.jpg);
+    background-size: cover;
+}
 h1{
-    color:rgb(0, 153, 204);
+    color: rgb(241, 213, 72);
+}
+h2{
+    color: rgb(241, 213, 72);
 }
 
 p{
-    color: rgb(51, 56, 153);
+    color: rgb(241, 213, 72);
+}
+label{
+   color: rgb(241, 213, 72);
+}
+
+br{
+    color: rgb(241, 213, 72);
 }
 
 #leftAndRight{
     display:inline-block;
 }
+
 
 #left{
     float:left;
