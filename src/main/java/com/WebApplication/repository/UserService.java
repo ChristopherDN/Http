@@ -1,8 +1,6 @@
 package com.WebApplication.repository;
 
 import com.WebApplication.models.User;
-import org.springframework.web.context.request.WebRequest;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -17,7 +15,6 @@ public class UserService {
 
 
     public User convertRsToUser(ResultSet rs) {
-
         try {
 
             if (rs.next()) {

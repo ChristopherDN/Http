@@ -81,9 +81,9 @@ public class SQLcontroller {
         return userList;
     }
 
-    public ResultSet validateLogin(User user, WebRequest request, HttpSession session) {
+    public ResultSet validateLogin(User user) {
         return scriptRecieve("SELECT * FROM Users.accounts where username = "
-                + "\"" + user.getUsername() + "\" and password = \"" + user.getPassword());
+                + "\"" + user.getUsername() + "\" and password = \"" + user.getPassword()+"\"");
     }
 }
 

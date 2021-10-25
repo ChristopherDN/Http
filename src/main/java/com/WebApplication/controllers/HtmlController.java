@@ -19,11 +19,11 @@ public class HtmlController {
     public String validateLogin(WebRequest request, HttpSession session) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        userService.convertRsToUser(sqlController.validateLogin(userService.create(username, password), request, session));
+        userService.convertRsToUser(sqlController.validateLogin(userService.create(username, password)));
         if (session.getAttribute("username") == null) {
             request.setAttribute("username",
                     userService.convertRsToUser(sqlController.validateLogin
-                            (userService.create(username, password), request, session)), WebRequest.SCOPE_SESSION);
+                            (userService.create(username, password))), WebRequest.SCOPE_SESSION);
             return "loginSuccess";
         }
         return "redirect:/";
