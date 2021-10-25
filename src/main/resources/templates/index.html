@@ -27,17 +27,18 @@
     <br>
     <br>
     <br>
-    <h2 >Welcome to the Webapp</h2>
+    <h2>Welcome to the Webapp</h2>
     <p> Here you can log in, or create an account</p>
     <form method="post" th:action="@{/validateLogin}">
-        <label>Username: </label><input class= "login" label type="username" th:name="username">
-        <br>
-        <label>Password: </label><input class= "login" type="password" th:name="password">
-        <br>
-        <input type="submit" value="Login"/>
-        <br>
-        <a href="register"> <input type="button"  value="Create account"></a>
         <p>
+            Username:<input class="login" th:name="username">
+            <br>
+            Password:<input class="login" type="password" th:name="password">
+            <br>
+            <input type="submit" value="Login"/>
+            <br>
+            <a href="register"> <input type="button" value="Create account"></a>
+            <br>
             Is session empty?
             <th:block id="col" th:text="${session.isEmpty()}? 'Yes':'No'"></th:block>
         </p>
