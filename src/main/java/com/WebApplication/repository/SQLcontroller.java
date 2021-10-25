@@ -1,8 +1,7 @@
-package com.WebApplication.controllers;
+package com.WebApplication.repository;
 
 import com.WebApplication.dbmanager.DBManager;
 import com.WebApplication.models.User;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpSession;
@@ -10,15 +9,18 @@ import java.sql.*;
 import java.util.ArrayList;
 
 
-@Controller
+
 public class SQLcontroller {
     Connection connection;
     PreparedStatement ps;
     boolean bol;
     ResultSet rs;
     ArrayList<User> userList = new ArrayList<>();
-    ArrayList <User> users = getResults(scriptRecieve("select * from users.accounts"));
+    ArrayList<User> users = getResults(scriptRecieve("select * from users.accounts"));
 
+    public ArrayList<User> getUsers() {
+        return users;
+    }
 
     public void scriptCommand(String sqlCommand) {
         try {
@@ -41,6 +43,13 @@ public class SQLcontroller {
         return rs;
     }
 
+
+    public String createAccount(User user) {
+        getUsers().add(user);
+        scriptCommand("insert into Users.accounts(username, password, email)values" +
+                "(" + "\"" + user.getUsername() + "\",\"" + user.getPassword() + "\",\"" + user.getEmail() + "\")");
+        return "index";
+    }
 
 
     /*public void batch(ArrayList<String> commands) {
@@ -72,18 +81,12 @@ public class SQLcontroller {
         return userList;
     }
 
-    public String validateLogin(User user, WebRequest request, HttpSession session) {
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getUsername().equals(user.getUsername())
-                    && users.get(i).getPassword().equals(user.getPassword())) {
-               if(session.getAttribute("username")== null){
-                   request.setAttribute("username",user,WebRequest.SCOPE_SESSION);
-               }
-                return "loginSuccess";
-            }
-        }
-        return "redirect:/";
+    public ResultSet validateLogin(User user, WebRequest request, HttpSession session) {
+        return scriptRecieve("SELECT * FROM Users.accounts where username = "
+                + "\"" + user.getUsername() + "\" and password = \"" + user.getPassword());
     }
+}
+
 /*
     public String arrayToString(ArrayList<Movie> movielist){
         movie = "";
@@ -91,4 +94,3 @@ public class SQLcontroller {
             movie += movieList.get(i);
         }
         return movie;*/
-    }

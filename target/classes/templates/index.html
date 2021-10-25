@@ -4,7 +4,6 @@
     <title>Login page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <div style="text-align: center;">
     <Body>
     <br>
@@ -31,20 +30,19 @@
     <p> Here you can log in, or create an account</p>
     <form method="post" th:action="@{/validateLogin}">
         <p>
-        Username:<input class="login"  th:name="username">
-        <br>
-        Password:<input class="login" type="password" th:name="password">
-        <br>
-        <input type="submit" value="Login"/>
-        <br>
-        <a href="register"> <input type="button" value="Create account"></a>
+            Username:<input class="login" th:name="username">
             <br>
-        Is session empty?
+            Password:<input class="login" type="password" th:name="password">
+            <br>
+            <input type="submit" value="Login"/>
+            <br>
+            <a href="register"> <input type="button" value="Create account"></a>
+            <br>
+            Is session empty?
             <th:block id="col" th:text="${session.isEmpty()}? 'Yes':'No'"></th:block>
         </p>
     </form>
     <br>
     </body>
 </div>
-</body>
 </html>

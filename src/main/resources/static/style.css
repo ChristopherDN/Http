@@ -1,4 +1,5 @@
 *{
+    /* this is resetting the padding and margin */
     padding:0;
     margin:0;
 }
@@ -12,7 +13,7 @@ html{
     font-family: "cursive";
 }
 body{
-    background-image:url(/art-deco-style.jpg);
+    background-image:url(art-deco-style.jpg);
     background-size: cover;
 }
 h1{
