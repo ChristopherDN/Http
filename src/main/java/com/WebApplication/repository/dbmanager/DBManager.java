@@ -1,4 +1,4 @@
-package com.WebApplication.dbmanager;
+package com.WebApplication.repository.dbmanager;
 
 import java.io.FileInputStream;
 import java.io.IOException;

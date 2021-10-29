@@ -1,7 +1,7 @@
 package com.WebApplication.controllers;
 
 import com.WebApplication.models.User;
-import com.WebApplication.repository.SQLcontroller;
+import com.WebApplication.repository.SQLAdmin;
 import com.WebApplication.repository.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class HtmlController {
-    SQLcontroller sqlController = new SQLcontroller();
+    SQLAdmin sqlController = new SQLAdmin();
     UserService userService = new UserService();
 
     @PostMapping("/validateLogin")

@@ -1,22 +1,20 @@
 package com.WebApplication.repository;
 
-import com.WebApplication.dbmanager.DBManager;
+import com.WebApplication.repository.dbmanager.DBManager;
 import com.WebApplication.models.User;
-import org.springframework.web.context.request.WebRequest;
 
-import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.util.ArrayList;
 
 
 
-public class SQLcontroller {
+public class SQLAdmin {
     Connection connection;
     PreparedStatement ps;
     boolean bol;
     ResultSet rs;
     ArrayList<User> userList = new ArrayList<>();
-    ArrayList<User> users = getResults(scriptRecieve("select * from users.accounts"));
+    ArrayList<User> users = getResults(scriptRecieve("select * from accounts"));
 
     public ArrayList<User> getUsers() {
         return users;
@@ -46,7 +44,7 @@ public class SQLcontroller {
 
     public String createAccount(User user) {
         getUsers().add(user);
-        scriptCommand("insert into Users.accounts(username, password, email)values" +
+        scriptCommand("insert into accounts(username, password, email)values" +
                 "(" + "\"" + user.getUsername() + "\",\"" + user.getPassword() + "\",\"" + user.getEmail() + "\")");
         return "index";
     }
@@ -82,7 +80,7 @@ public class SQLcontroller {
     }
 
     public ResultSet validateLogin(User user) {
-        return scriptRecieve("SELECT * FROM Users.accounts where username = "
+        return scriptRecieve("SELECT * FROM accounts where username = "
                 + "\"" + user.getUsername() + "\" and password = \"" + user.getPassword()+"\"");
     }
 }
