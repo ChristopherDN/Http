@@ -26,7 +26,8 @@ public class HtmlController {
                             (userService.create(username, password))), WebRequest.SCOPE_SESSION);
             return "loginSuccess";
         }
-        return "redirect:/";
+        //return "redirect:/";
+        return "loginFailed";
     }
 
 
