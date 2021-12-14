@@ -1,10 +1,10 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Project 'PlanIt'" />
-    <option name="defaultScopeName" value="Project 'PlanIt'" />
+    <option name="customScope" value="File 'Web 'Web''" />
+    <option name="defaultScopeName" value="File 'Web 'Web''" />
     <option name="localCaseSensitive" value="true" />
     <option name="LOCAL_CASE_SENSITIVE_SEARCH" value="true" />
-    <option name="SEARCH_SCOPE" value="Project 'PlanIt'" />
+    <option name="SEARCH_SCOPE" value="File 'Web 'Web''" />
     <mask>*.css</mask>
     <mask>*.html</mask>
     <mask>*.xml</mask>
