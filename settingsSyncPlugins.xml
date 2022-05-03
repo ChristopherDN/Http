@@ -41,6 +41,11 @@
             </PluginData>
           </value>
         </entry>
+        <entry key="com.intellij.selenium">
+          <value>
+            <PluginData />
+          </value>
+        </entry>
         <entry key="com.jetbrains.darkPurpleTheme">
           <value>
             <PluginData>
