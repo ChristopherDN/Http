@@ -1,5 +1,7 @@
 <application>
   <component name="NotificationConfiguration">
-    <notification groupId="AWS Toolkit" shouldLog="false" />
+    <notification groupId="AWS Toolkit" displayType="NONE" shouldLog="false" />
+    <notification groupId="aws.toolkit_deprecation" displayType="NONE" />
+    <notification groupId="aws.toolkit_telemetry" displayType="NONE" />
   </component>
 </application>
