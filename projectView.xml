@@ -1,7 +1,8 @@
 <application>
   <component name="ProjectViewSharedSettings">
     <option name="autoscrollFromSource" value="true" />
-    <option name="showMembers" value="true" />
+    <option name="hideEmptyPackages" value="false" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showVisibilityIcons" value="true" />
   </component>
 </application>
