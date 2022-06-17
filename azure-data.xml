@@ -2,11 +2,11 @@
   <component name="Azure Toolkit for IntelliJ">
     <option name="properties">
       <map>
-        <entry key="account.auth_method_detail" value="" />
+        <entry key="account.auth_method_detail" value="{&quot;accountEmail&quot;:&quot;chri42fk@stud.kea.dk&quot;,&quot;tenantId&quot;:null,&quot;clientId&quot;:&quot;04b07795-8ddb-461a-bbee-02f9e1bf7b46&quot;,&quot;credFilePath&quot;:null,&quot;certificate&quot;:null,&quot;authMethod&quot;:&quot;IDENTITY&quot;,&quot;azureEnv&quot;:&quot;AzureCloud&quot;,&quot;authType&quot;:&quot;OAUTH2&quot;,&quot;tenantIds&quot;:[&quot;d10c3c6e-c228-4944-8b6a-6067c6afe3c9&quot;],&quot;subscriptions&quot;:[{&quot;id&quot;:&quot;4ffd0609-860d-4a41-be20-8b0aa43ba12d&quot;,&quot;name&quot;:&quot;DAT21_006&quot;,&quot;tenantId&quot;:&quot;d10c3c6e-c228-4944-8b6a-6067c6afe3c9&quot;,&quot;selected&quot;:true}]}" />
         <entry key="account.azure_environment" value="Azure" />
-        <entry key="account.subscriptions_json" value="" />
+        <entry key="account.subscription_details" value="[{&quot;subscriptionId&quot;:&quot;4ffd0609-860d-4a41-be20-8b0aa43ba12d&quot;,&quot;subscriptionName&quot;:&quot;DAT21_006&quot;,&quot;tenantId&quot;:&quot;d10c3c6e-c228-4944-8b6a-6067c6afe3c9&quot;,&quot;selected&quot;:true}]" />
         <entry key="telemetry.telemetry_allow_telemetry" value="true" />
-        <entry key="telemetry.telemetry_plugin_version" value="3.65.0-2022.1" />
+        <entry key="telemetry.telemetry_plugin_version" value="3.65.2-2022.1" />
       </map>
     </option>
   </component>
